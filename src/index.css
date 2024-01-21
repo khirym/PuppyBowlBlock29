@@ -1,0 +1,189 @@
+body {
+  background-image: url("./concrete.jpg");
+  background-repeat: no-repeat; 
+  background-attachment: fixed; 
+}
+
+/* Styling for the introduction text of the application. */
+.Header, .Footer {
+  width: 100%;
+  background-color: #4e5051;
+  color: rgb(69, 5, 69);
+  padding: .1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Header h1 {
+  font-size: 1.5rem;
+}
+
+.Footer {
+  padding: 0.75rem;
+  display: grid;
+  place-content: center;
+}
+
+.Nav {
+  width: 100%;
+  background-color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.searchForm {
+  width: 80%;
+  padding: 1rem 0 0 0.75rem;
+}
+
+.searchForm input[type="text"] {
+  font-family: 'Open Sans', sans-serif;
+  width: 100%;
+  min-height: 48px;
+  font-size: 1rem;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  outline: none;
+}
+
+.searchForm label {
+  position: absolute;
+  left: -99999px;
+}
+
+.Nav ul {
+  color: #fff;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.Nav li {
+  padding: 1rem;
+}
+
+.Nav li:hover, 
+.Nav li:focus {
+  padding: 1rem;
+}
+
+.Nav li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.Nav li:hover, 
+.Nav li:focus, 
+.Nav li:hover a, 
+.Nav li:focus a  {
+  background-color: #eee;
+  color: #333;
+}
+
+.Nav li:hover a, 
+.Nav li:focus a {
+  cursor: pointer;
+}
+
+
+/* Styling for the container that holds the player cards. */
+.players {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Styling for individual player cards. */
+.player-card {
+  width: 360px; 
+  height: 380px; 
+  margin: 10px; 
+  background-color: rgb(121, 158, 181);
+  border-radius: 10px;/* The border around the card. */
+  overflow: hidden; /* Any content that goes outside the card will be hidden. */
+  position: relative; /* The card's position is set to relative so it can be moved using the transform property. */
+  transition: transform 0.3s; /* Transition effect for the transform property. */
+}
+
+/* Styling for when a user hovers over a player card. */
+.player-card:hover {
+  /* The card moves up 5 pixels when hovered over. */
+  transform: translateY(-5px);
+}
+
+/* Styling for the container that holds the player's image. */
+.player-image-container {
+  /* The image is centered. */
+  /* The image is centered along the horizontal axis. */
+  /* The image is centered along the vertical axis. */
+  height: 300px; /* The height of the image container. */
+  padding: 10px; /* The padding around the image. */
+}
+
+/* Styling for the player's image. */
+.player-image {
+  width: 250px; /* The width of the image. */
+  height: 250px; /* The height of the image. */
+  /* The image will cover the entire area of its container without distorting its aspect ratio. */
+  /* The image is displayed using CSS Grid. */
+  /* The margin to the left of the image. */
+  object-fit: cover;
+  display: grid;
+  margin-left: 55px;
+}
+
+/* Styling for the player's details (name, breed, status). */
+.player-details {
+  flex-direction: column; /* The details are arranged in a column. */
+  align-items: center; /* The details are centered along the vertical axis. */
+  justify-content: center; /* The details are centered along the horizontal axis. */
+  color: #000; /* The color of the details text. */
+  font-size: 16px; /* The size of the details text. */
+  text-align: center; /* The details text is centered. */
+}
+
+@media only screen and (min-width: 610px) {
+  html {
+    font-size: 22px;
+  }
+
+  .Header h1 {
+    font-size: 2rem;
+  }
+
+  .Nav {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .Nav ul {
+    text-align: right;
+  }
+
+  .Nav li:hover, 
+  .Nav li:focus, 
+  .Nav li:hover a, 
+  .Nav li:focus a  {
+    background-color: #eee;
+    color: #333;
+  }
+
+  .searchForm {
+    width: 50%;
+    padding: .5rem 0;
+  }
+ 
+  .searchForm input[type="text"] {
+    margin-left: 0.5rem;
+  }
+
+  .newPostForm textarea {
+    height: 300px;
+  }
+}
