@@ -1,10 +1,9 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 const Nav = ({search, setSearch}) => {
   return (
     <nav className="Nav">
-        <form className="searchForm" onSubmit={(e) => e.preventDefault}>
+        <form className="searchForm" onSubmit={(e) => e.preventDefault()}>
         <label htmlFor="search">Search Players</label>
         <input 
             id="search"
@@ -15,9 +14,9 @@ const Nav = ({search, setSearch}) => {
         />
         </form>
         <ul>
-            <li><Link to={"/"}>Home</Link></li>
-            <li><Link to={"/players"}>Player Page</Link></li>
-            <li><Link to={"/newplayer"}>New Player</Link></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/players">New Player</Link></li>
+            <li><Link to="/players/:id">Player</Link></li>
         </ul>
     </nav>
   );

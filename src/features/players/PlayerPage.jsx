@@ -3,11 +3,12 @@ import "../../../src/index.css";
 
 const PlayerPage = ({ players, handleDelete }) => {
   const { id } = useParams();
-  const player = players.find(player => (player.id).toString() === id);
+  const player = players.find(player => player.id === id);
 
   return (
-      <div className="player-details">
-        {player && (
+    <main>
+      <article className="player-details">
+        {player && 
           <>
             <h2>{player.name}</h2>
             <p>Breed: {player.breed}</p>
@@ -15,7 +16,7 @@ const PlayerPage = ({ players, handleDelete }) => {
             <p>Image URL: {player.imageUrl}</p>
             <button onClick={() => handleDelete(player.id)}>Delete Post</button>
           </>
-        )}
+        }
         {!player && (
           <>
             <h2>Post Not Found</h2>
@@ -25,7 +26,8 @@ const PlayerPage = ({ players, handleDelete }) => {
             </p>
           </>
         )}
-      </div>
+      </article>
+    </main>
   );
 };
 
