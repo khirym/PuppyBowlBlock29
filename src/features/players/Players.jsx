@@ -1,12 +1,10 @@
 import React from "react";
+import PlayerCard from "./PlayerCard";
 import { useFetchPlayersQuery } from "../../api/puppyBowlApi";
 import "../../../src/index.css";
 
 const Players = () => {
-  console.log(useFetchPlayersQuery())
   const { data, isError, isLoading } = useFetchPlayersQuery();
-  console.log("Error:", isError);
-  console.log("Loading:", isLoading);
 
   if (isLoading) {
     return <p>Loading...</p>;
@@ -15,21 +13,14 @@ const Players = () => {
   if (isError) {
     return <p>An error occured.</p>;
   }
+
   console.log("Data:", data.data);
   const {data: {players}} = data
+
   return (
     <div className="players">
-      {players.map((player) => (
-          <div key={player.id} className="player-card">
-
-            <div className="player-details">
-            <img className="player-image" src={player.imageUrl} />
-              <h2> {player.name} </h2>
-              <p> {player.breed} </p>
-
-              <p> {player.status} </p>
-            </div>
-          </div>
+      {players.map(player => (
+          <PlayerCard key={player.id} player={player} />
         ))}
     </div>
   );

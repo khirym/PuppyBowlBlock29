@@ -15,4 +15,4 @@ export const puppyBowlApi = createApi({
   }),
 });
 
-export const { useFetchPlayersQuery } = puppyBowlApi
+export const { useFetchPlayersQuery } = puppyBowlApi;
